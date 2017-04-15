@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+}
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.wrap{
+    padding: 1.5%;
+}
+.box{
+    width: 30%;
+    padding: 30% 0 0 0;
+    margin: 1.5%;
+    background: #eb9316;
+    border-radius: 20px;
+    float: left;
+}

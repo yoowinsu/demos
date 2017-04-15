@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	background: #fad3d2;
+}
+
+#date {
+	width: 960px;
+	height: 600px;
+	background: url(../img/bg.jpg) no-repeat left center;
+	margin: 40px auto;
+	border-radius: 18px;
+	background-color: white;
+	box-shadow: #fabfc0 11px 12px 18px;
+	position: relative;
+}
+
+#date .time1 {
+	position: absolute;
+	top: 50px;
+	font-size: 60px;
+	color: white;
+	left: 50px;
+}
+
+#date .time2 {
+	position: absolute;
+	top: 130px;
+	left: 55px;
+	font-size: 18px;
+	color: white;
+	font-family: "微软雅黑";
+}
+
+#date .time3 {
+	position: absolute;
+	font-family: "Helvetica Neue UltraLight";
+	font-size: 50px;
+	color: #ffbab7;
+	right: 200px;
+	top: 100px;
+	width: 320px;
+}
+
+#date .time3 #up {
+	position: absolute;
+	top: 3px;
+	left: 270px;
+	border-bottom: 20px solid #ffbab7;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+}
+
+#date .time3 #down {
+	position: absolute;
+	top: 28px;
+	left: 270px;
+	border-top: 20px solid #ffbab7;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+}
+
+#date .time3:hover {
+	cursor: pointer;
+}
+
+#date .time3 span:active {
+	cursor: pointer;
+	color: #ff4f47;
+}
+
+#date .time4 {
+	position: absolute;
+	font-size: 40px;
+	font-family: "arial, helvetica, sans-serif";
+	right: 20px;
+	top: 20px;
+	color: #ffbab7;
+}
+
+#date .number {
+	font-size: 0;
+	position: absolute;
+	bottom: 10px;
+	right: 70px;
+	width: 455px;
+	font-size: 0;
+}
+
+#date ul {
+	position: absolute;
+	right: 70px;
+	top: 150px;
+	font-size: 0;
+}
+
+#date ul li,
+.number span {
+	width: 65px;
+	height: 65px;
+	font: 22px/65px "微软雅黑";
+	color: #adadad;
+	text-align: center;
+	display: inline-block;
+}
+
+.number span.color {
+	color: #e8e8e8;
+}
+
+.number span.active {
+	background: #ffe1e0;
+	border-radius: 50%;
+	color: white;
+}
+
+.number span:hover {
+	background: #ffe1e0;
+	border-radius: 50%;
+	color: #ffb321;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>smartisan3d</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<div id="wrap">
+    <div id="banner">smartisan</div>
+</div>
+<script>
+    $('#wrap').on('mousemove', function(e){
+
+        var offset = $('#wrap').offset()
+
+        var x = e.pageX - offset.left
+        var y = e.pageY - offset.top
+
+
+        var centerX = $('#wrap').outerWidth() /2
+        var centerY = $('#wrap').outerHeight() /2
+
+        var deltaX = x - centerX
+        var deltaY = y - centerY
+
+        var percentX = deltaX / centerX
+        var percentY = deltaY / centerY
+
+        var deg = 2
+
+
+
+        $('#banner').css({
+            transform: 'rotateX('+deg*-percentY + 'deg)'+
+            ' rotateY('+deg*percentX+'deg)'
+        })
+    })
+
+    $('#wrap').on('mouseleave', function(){
+        $('#banner').css({
+            transform: ''
+        })
+    })
+</script>
+</body>
+</html>
