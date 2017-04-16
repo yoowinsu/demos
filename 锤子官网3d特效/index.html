@@ -13,7 +13,7 @@
     <div id="banner">smartisan</div>
 </div>
 <script>
-    $('#wrap').on('mousemove', function(e){
+    $('#wrap').on('mousemove', function (e) {
 
         var offset = $('#wrap').offset()
 
@@ -21,8 +21,8 @@
         var y = e.pageY - offset.top
 
 
-        var centerX = $('#wrap').outerWidth() /2
-        var centerY = $('#wrap').outerHeight() /2
+        var centerX = $('#wrap').outerWidth() / 2
+        var centerY = $('#wrap').outerHeight() / 2
 
         var deltaX = x - centerX
         var deltaY = y - centerY
@@ -33,14 +33,13 @@
         var deg = 2
 
 
-
         $('#banner').css({
-            transform: 'rotateX('+deg*-percentY + 'deg)'+
-            ' rotateY('+deg*percentX+'deg)'
+            transform: 'rotateX(' + deg * -percentY + 'deg)' +
+            ' rotateY(' + deg * percentX + 'deg)'
         })
     })
 
-    $('#wrap').on('mouseleave', function(){
+    $('#wrap').on('mouseleave', function () {
         $('#banner').css({
             transform: ''
         })
