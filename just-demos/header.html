@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>header</title>
+    <style>
+        .layout{
+            width:600px;
+            margin: 0 auto;
+        }
+        .clearfix:after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        .first{
+            background: #f1f1f1;
+            box-shadow:0 4px 6px 0 rgba(0,0,0,0.1),0 2px 6px 0 rgba(0,0,0,0.15);
+            list-style:none;
+            padding: 0;
+        }
+        .first>li{
+            position:relative;
+            float: left;
+        }
+        .first li a{
+            text-decoration: none;
+            padding:10px 16px;
+            display: block;
+            color:#000;
+        }
+        .first li a:hover{
+            background: #ccc;
+        }
+        .second{
+            display: none;
+            list-style:none;
+            margin: 0;
+            padding: 0;
+            position:absolute;
+            top: 100%;
+            left: 0;
+            min-width: 160px;
+            box-shadow:0 4px 6px 0 rgba(0,0,0,0.1),0 2px 6px 0 rgba(0,0,0,0.15);
+            background: #fff;
+        }
+        .first>li:hover .second{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="layout">
+    <ul class="first clearfix">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">作品</a></li>
+        <li class="more">
+            <a href="#">更多</a>
+            <ul class="second">
+                <li><a href="#">github</a></li>
+                <li><a href="#">博客</a></li>
+                <li><a href="#">知乎</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
