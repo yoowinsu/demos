@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>三栏布局</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .list{
+            width: 150px;
+            background-color: pink;
+            float: left;
+            height: 450px;
+        }
+        .aside{
+            width: 150px;
+            background-color: #CCCCCC;
+            float: right;
+            height: 450px;
+        }
+        .main{
+            margin-left: 160px;
+            margin-right: 160px;
+            background-color: yellowgreen;
+            height: 330px;
+        }
+        footer{
+            background-color: #f0ad4e;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap clearfix">
+    <div class="list">
+        列表
+    </div>
+    <div class="aside">
+        右边侧栏
+    </div>
+    <div class="main">
+        主题内容
+    </div>
+</div>
+<footer>底部</footer>
+</body>
+</html>

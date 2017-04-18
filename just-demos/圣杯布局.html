@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .list{
+            width: 150px;
+            background-color: pink;
+            float: left;
+            height: 450px;
+            margin-left: -100%;
+            position: relative;
+            left: -160px;
+        }
+        .aside{
+            width: 150px;
+            background-color: #CCCCCC;
+            float: left;
+            height: 450px;
+            margin-left: -150px;
+            position: relative;
+            left: 160px;
+        }
+        .main{
+            width: 100%;
+            background-color: yellowgreen;
+            height: 330px;
+            float: left;
+        }
+        .ct{
+            padding: 0 160px;
+        }
+        footer{
+            background-color: #f0ad4e;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="ct clearfix">
+    <div class="main">
+        主题内容
+    </div>
+    <div class="list">
+        列表
+    </div>
+    <div class="aside">
+        右边侧栏
+    </div>
+    
+</div>
+<footer>底部</footer>
+</body>
+</html>

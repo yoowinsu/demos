@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>单栏布局</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .layout{
+            width: 900px;
+            margin: 0 auto;
+        }
+        #header,#footer{
+            width: 100%;
+            background-color: pink;
+            height: 100px;
+        }
+        #main{
+            height: 500px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+  <header id="header">
+      <div class="content layout">头部</div>
+  </header>
+  <main id="main" class="layout">主题内容</main>
+  <footer id="footer" class="layout">
+      <div class="content layout">底部</div>
+  </footer>
+</body>
+</html>
