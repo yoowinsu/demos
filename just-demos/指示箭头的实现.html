@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>tips</title>
+    <style>
+        @font-face {
+            font-family: 'jiantou';  /* project id 282488 */
+            src: url('//at.alicdn.com/t/font_po39elwa0ncrqkt9.eot');
+            src: url('//at.alicdn.com/t/font_po39elwa0ncrqkt9.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_po39elwa0ncrqkt9.woff') format('woff'),
+            url('//at.alicdn.com/t/font_po39elwa0ncrqkt9.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_po39elwa0ncrqkt9.svg#iconfont') format('svg');
+        }
+
+        .mod-tip {
+            position: relative;
+            width: 300px;
+            margin-top: 40px;
+            margin-left: 40px;
+        }
+        .mod-tip .container{
+            box-sizing: border-box;
+            width: 300px;
+            height: 200px;
+            border: 6px solid #000;
+        }
+
+        .tip-top-right .triangle{
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-top: 20px solid pink;
+            border-right: 20px solid pink;
+            border-left: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+        }
+        .tip-top .container{
+            background-color: #8a98ff;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .tip-top .triangle-double-first{
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            border-left: 20px solid transparent ;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid red;
+        }
+        .tip-top .triangle-double-first:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 8.4px;
+            left: -20px;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid pink;
+        }
+        .tip-top .triangle-double-last{
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            border-left: 20px solid transparent ;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #000;
+        }
+        .tip-top .triangle-double-last:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 8.4px;
+            left: -20px;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #8a98ff;
+        }
+        .triangle-iconfont{
+            font-family: "jiantou";
+            font-size: 30px;
+            position: absolute;
+            color: red;
+            top: -22px;
+            left: 20px;
+        }
+        .house-name{
+            display: inline-block;
+            padding: 0 20px;
+            background-color: #2ccc92;
+            color: #fff;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            position: absolute;
+        }
+        .triangle-left-top{
+            position: absolute;
+            top: 0x;
+            left: 20px;
+            border-left: 4px solid #ccc ;
+            border-right: 4px solid transparent;
+            border-top: 4px solid #ccc;
+            border-bottom: 4px solid transparent;
+        }
+        .triangle-top{
+            position: absolute;
+            top: 0x;
+            left: 20px;
+            border-left: 6px solid transparent ;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #2ccc92;
+        }
+        .meijing{
+            left: 50%;
+            top: 100px;
+        }
+        .youdi{
+            background-color: #8a98ff;
+            left: 50%;
+            top: 200px;
+        }
+        .shijie{
+            background-color: #ff4758;
+            left: 50%;
+            top: 300px;
+        }
+        .yuyuan{
+            left: 50%;
+            top: 10px;
+        }
+        .yaxin{
+            left: 50%;
+            top: 400px;
+        }
+        .shijie .triangle-left-top{
+            border-left-color: #ff4758 ;
+            border-top-color: #ff4758;
+        }
+        .youdi .triangle-left-top{
+            border-left-color: #8a98ff ;
+            border-top-color: #8a98ff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mod-tip tip-top-right">
+    <span class="triangle"></span>
+    <div class="container">
+    </div>
+</div>
+<div class="mod-tip tip-top">
+    <span class="triangle-double-first"></span>
+    <div class="container">
+        直观的效果
+    </div>
+</div>
+<div class="mod-tip tip-top">
+    <span class="triangle-double-last"></span>
+    <div class="container">
+        最终的效果
+    </div>
+</div>
+<div class="mod-tip">
+    <span class="triangle-iconfont">&#xe62f;</span>
+    <div class="container">
+    </div>
+</div>
+<div class="house">
+    <div class="house-name youdi">
+        <div class="container">
+            旭瑞和昌优地
+        </div>
+        <span class="triangle-left-top"></span>
+    </div>
+    <div class="house-name shijie">
+        <div class="container">
+            万科美景世玠
+        </div>
+        <span class="triangle-left-top"></span>
+    </div>
+    <div class="house-name yaxin">
+        <div class="container">
+            亚新紫藤公馆
+        </div>
+        <span class="triangle-top"></span>
+    </div>
+    <div class="house-name yuyuan">
+        <div class="container">
+            豫发豫园
+        </div>
+        <span class="triangle-top"></span>
+    </div>
+    <div class="house-name meijing">
+        <div class="container">
+            美景美境
+        </div>
+        <span class="triangle-top"></span>
+    </div>
+</div>
+</body>
+</html>
