@@ -1,0 +1,415 @@
+@font-face {
+    font-family: 'sunac';  /* project id 284704 */
+    src: url('//at.alicdn.com/t/font_bqb5ca2re9afw29.eot');
+    src: url('//at.alicdn.com/t/font_bqb5ca2re9afw29.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_bqb5ca2re9afw29.woff') format('woff'),
+    url('//at.alicdn.com/t/font_bqb5ca2re9afw29.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_bqb5ca2re9afw29.svg#iconfont') format('svg');
+}
+/*css reset*/
+body,ul,ol,p,h1,h2,h3,h4{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/*base*/
+.layout{
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+*{
+    box-sizing: border-box;
+}
+/*index*/
+html,body{
+    height: 100%;
+    text-align: center;
+}
+#header{
+    width: 100%;
+    background: url("http://www.goa.com.cn/upload/product/2015-3/201533013241649.jpg");
+    background-size: cover;
+}
+#header .nav{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+}
+#header .nav .logo{
+    font-family: "sunac";
+    color: #2fa162;
+    font-size: 160px;
+    line-height: 50px;
+    float: left;
+}
+#header .nav .logo:hover{
+    opacity: 0.9;
+}
+#header .nav-list{
+    float: right;
+}
+#header .nav-list li{
+    float: left;
+    padding: 15px;
+}
+#header .nav-list li a:hover{
+    color: #2fa162;
+}
+#header .nav-list li a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+#header .header-title{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    color: #fff;
+}
+#header .header-title h2{
+    font-style: italic;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+}
+#header .header-title h1{
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 75px;
+    margin-bottom: 50px;
+}
+#header .header-title .btn{
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 15px 30px;
+    background-color: #2fa162;
+    opacity: 0.9;
+}
+#header .header-title .btn:hover{
+    opacity: 1;
+}
+
+/*content pub*/
+#services,#six-design,#about,#team{
+    padding: 150px 0;
+}
+#services h3,#six-design h3,#about h3,#team h3{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+#services .little-title,#six-design .little-title,#about .little-title,#team .little-title{
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 75px;
+    color: #777;
+}
+h4{
+    font-size: 18px;
+    font-weight: 700;
+}
+/*services*/
+#services .services-wrap li{
+    width: 360px;
+    float: left;
+    margin-left: 30px;
+}
+#services .services-wrap li p{
+    color: #777;
+}
+#services .services-wrap{
+    margin-left: -30px;
+}
+#services .services-wrap li i{
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    background-color: #2fa162;
+    display: inline-block;
+    position: relative;
+}
+#services .services-wrap li i:after{
+    font-family: "sunac";
+    position: absolute;
+    color: #fff;
+    font-style: normal;
+    font-size: 50px;
+    left: 32px;
+    top: 25px;
+}
+#services .services-wrap li .shopcar:after{
+    content: "\e605";
+}
+#services .services-wrap li .macbook:after{
+    content: "\e68d";
+}
+#services .services-wrap li .suo:after{
+    content: "\e606";
+}
+#services .services-wrap li h4{
+    margin: 15px 0;
+}
+
+/*six-design*/
+#six-design{
+    background-color: #f7f7f7;
+}
+#six-design .six-design-wrap li{
+    width: 360px;
+    float: left;
+    margin-left: 30px;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+#six-design .six-design-wrap li img{
+    width: 360px;
+    vertical-align: bottom;
+}
+#six-design .six-design-wrap{
+    margin-left: -30px;
+}
+#six-design .six-design-wrap li h4{
+    margin-top: 25px;
+}
+#six-design .six-design-wrap li>p{
+    font-style: italic;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 25px;
+}
+#six-design .six-design-wrap .hover{
+    position: relative;
+
+    opacity: 0;
+}
+#six-design .six-design-wrap .hover-bgc{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 260px;
+    background-color: #2fa162;
+}
+#six-design .six-design-wrap .hover:after{
+    content: "\e62f";
+    font-family: "sunac";
+    color: #fff;
+    font-size: 150px;
+    position: absolute;
+    top: 42px;
+    left: 105px;
+}
+
+#six-design .six-design-wrap .hover-wrap:hover .hover{
+    opacity: 0.8;
+    transition: all ease .5s;
+}
+
+
+/*about*/
+#about .center-time{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #f1f1f1;
+    border-radius: 50%;
+    line-height: 100px;
+    font-style: normal;
+    color: #fff;
+    background-color: #2fa162;
+    opacity: 0.9;
+}
+#about .center-time:hover{
+    opacity: 1;
+    border-color: #2fa162;
+}
+#about .about-content h4{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#about .about-content p{
+    color: #777;
+    font-size: 14px;
+    line-height: 20px;
+}
+#about li{
+    position: relative;
+    padding-bottom: 160px;
+    margin-left: 1px;
+}
+#about li:last-child{
+    padding-bottom: 0;
+
+}
+#about li:after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    border-left: 2px solid #f1f1f1;
+    height: 100%;
+    z-index: -1;
+}
+#about li:nth-child(odd) .about-content{
+    position: absolute;
+    right: 50%;
+    top: 0;
+    width: 350px;
+    text-align: right;
+    margin-right: 80px;
+}
+#about li:nth-child(even) .about-content{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    text-align: left;
+    margin-left: 80px;
+    width: 350px;
+}
+#about li:last-child p{
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    border: 3px solid #f1f1f1;
+    border-radius: 50%;
+    font-style: normal;
+    color: #fff;
+    background-color: #2fa162;
+    opacity: 0.9;
+    line-height: 24px;
+    padding-top: 4px;
+}
+
+#about li:last-child p:hover{
+    opacity: 1;
+    border-color: #2fa162;
+}
+
+
+/*team*/
+#team{
+    background-color: #f7f7f7;
+}
+#team ul{
+    margin-left: -30px;
+}
+#team li{
+    float: left;
+    width: 360px;
+    margin-left: 30px;
+}
+#team ul li img{
+    width: 180px;
+    height: 180px;
+    border: 5px solid #f0f7f0;
+    border-radius: 50%;
+}
+#team ul li h4{
+    padding-top: 30px;
+    margin-bottom: 6px;
+}
+#team ul li h5{
+    margin: 0;
+    color: #777;
+    padding: 0 0 20px;
+}
+#team ul li p{
+    width: 60%;
+    margin: 0 auto;
+}
+
+/*contact*/
+#contact{
+    background: -webkit-linear-gradient(#fff, #2fa162);
+    background: -o-linear-gradient(#fff, #2fa162);
+    background: -moz-linear-gradient(#fff, #2fa162);
+    background: linear-gradient(#fff, #2fa162);
+}
+#contact .layout{
+    background-color: #fff;
+    padding: 100px 0;
+}
+#contact .form h3{
+    font-size: 40px;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+#contact .form>p{
+    margin-bottom: 60px;
+    font-style: italic;
+}
+#contact .form .form-left,#contact .form .form-right {
+    float: left;
+    width: 50%;
+    padding: 0 20px;
+}
+#contact .form-left input,#contact .form-right textarea{
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #2fa162;
+    border-radius: 5px;
+    outline: none;
+    display: block;
+    font: 400 14px/14px Arial;
+    margin-top: 10px;
+}
+#contact .form-right textarea{
+    height: 222px;
+}
+#contact .form input[type="submit"] {
+    padding: 15px 30px;
+    color: #fff;
+    background-color: #2fa162;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    opacity: 0.9;
+}
+#contact form input[type="submit"]:hover{
+    opacity: 1;
+}
+
+
+/*footer*/
+#footer{
+    padding: 30px 0 20px 0;
+    background-color: #2fa162;
+    font-weight: 400;
+    font-size: 14px;
+}
+#footer p{
+    float: left;
+    padding: 0 30px;
+}
+#footer .footer-link{
+    margin-left: 50%;
+}
+#footer a{
+    float: right;
+    color: #fff;
+    margin-right: 30px;
+    opacity: 0.9;
+}
+#footer a:hover{
+    text-decoration: underline;
+    opacity: 1;
+}
