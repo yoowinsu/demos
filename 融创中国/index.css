@@ -370,7 +370,7 @@ h4{
     outline: none;
     display: block;
     font: 400 14px/14px Arial;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 #contact .form-right textarea{
     height: 222px;
