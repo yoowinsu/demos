@@ -370,10 +370,11 @@ h4{
     outline: none;
     display: block;
     font: 400 14px/14px Arial;
-    margin: 10px 0;
+    margin-top: 10px;
 }
 #contact .form-right textarea{
     height: 230px;
+    margin-bottom: 10px;
 }
 #contact .form input[type="submit"] {
     padding: 15px 30px;
