@@ -372,6 +372,9 @@ h4{
     font: 400 14px/14px Arial;
     margin-top: 10px;
 }
+#contact .form-left input{
+    height: 50px;
+}
 #contact .form-right textarea{
     height: 230px;
     margin-bottom: 10px;
