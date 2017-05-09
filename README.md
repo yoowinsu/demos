@@ -40,3 +40,6 @@
 
 ## 锤子官网3d特效
 - [锤子官网3d效果](https://yoowinsu.github.io/demos/%E9%94%A4%E5%AD%90%E5%AE%98%E7%BD%913d%E7%89%B9%E6%95%88/index.html)
+
+## 16进制颜色转RGB
+- [16进制颜色转RGB](https://yoowinsu.github.io/demos/16%E8%BF%9B%E5%88%B6%E9%A2%9C%E8%89%B2%E8%BD%ACRGB/16%E8%BF%9B%E5%88%B6%E9%A2%9C%E8%89%B2%E8%BD%ACRGB.html)
