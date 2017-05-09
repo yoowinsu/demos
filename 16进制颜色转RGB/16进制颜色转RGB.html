@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>16进制颜色转RGB</title>
+	<meta name="viewport" content="width=device-width" />
+	<style>
+	body{
+		text-align: center;
+	}
+	h1{
+		margin: 100px;
+		font-size: 20px;
+	}
+	.ct{
+		display: inline-block;
+	}
+	#rgb{
+		font-size: 24px;
+	}
+	.fail{
+		color: #FF3F13;
+	}
+	.success{
+		color: #6BC827;
+	}
+
+	</style>
+</head>
+<body>
+	<h1>16进制颜色转RGB</h1>
+	<div class="ct">
+		# <input type="text" id="input" placeholder="请输入...">
+		<button id="btn">转换</button>
+	</div>
+	<p id="rgb"></p>
+	<script>
+		var input = document.getElementById('input');
+		var btn = document.getElementById('btn');
+		var ct = document.querySelector('.ct');
+		var rgb = document.getElementById('rgb');
+
+		btn.addEventListener('click',function(){
+			rgb.innerHTML=toRgb(input.value);
+		});
+
+		function toRgb(str){
+			var reg = /(^#?[0-9a-fA-F]{6}$)|(^#?[0-9a-fA-F]{3}$)/;
+			var reg2 = /^#?[0-9a-fA-F]{3}$/;
+			var rgb = document.getElementById('rgb');
+			if((reg).test(str)){
+				var obj = {'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,a:10,b:11,c:12,d:13,e:14,f:15,A:10,B:11,C:12,D:13,E:14,F:15};
+				rgb.classList.remove('fail');
+				rgb.classList.add('success');
+
+				if((reg2).test(str)){
+					var arr1 = (str).match(/[0-9a-fA-F]{1}/g);
+					var newArr1=[];
+					for(var i=0;i<arr1.length;i++){
+						newArr1.push(obj[arr1[i]]*16+obj[arr1[i]]);
+					}
+					return 'RGB: ('+newArr1[0]+','+newArr1[1]+','+newArr1[2]+')';
+				}else{
+					var arr2 = (str).match(/[0-9a-fA-F]{2}/g);
+					var newArr2=[];
+					for(var i=0;i<arr2.length;i++){
+						newArr2.push(obj[arr2[i][0]]*16+obj[arr2[i][1]]);
+					}
+					return 'RGB: ('+newArr2[0]+','+newArr2[1]+','+newArr2[2]+')';
+				}
+			}else{
+				rgb.classList.remove('success');
+				rgb.classList.add('fail');
+				return '请输入正确的格式';
+			}
+		}
+	</script>
+</body>
+</html>
