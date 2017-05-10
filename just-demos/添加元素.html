@@ -20,15 +20,21 @@
 	var ct = document.getElementsByClassName('ct')[0];
 
 	addStart.addEventListener('click',function(){
-		var li = document.createElement('li');
-		li.innerText = ipt.value;
-		ct.insertBefore(li,ct.firstChild);
+		if (ipt.value !== '') {
+			var li = document.createElement('li');
+			li.innerText = ipt.value;
+			ct.insertBefore(li,ct.firstChild);
+			ipt.value = '';		
+		}
 	})
 
 	addEnd.addEventListener('click',function(){
-		var li = document.createElement('li');
-		li.innerText = ipt.value;
-		ct.appendChild(li);
+		if (ipt.value !== ''){
+			var li = document.createElement('li');
+			li.innerText = ipt.value;
+			ct.appendChild(li);	
+			ipt.value = '';			
+		}
 	})
 
 	ct.addEventListener('click',function(e){
