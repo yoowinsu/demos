@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>model</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	.btn{
+		margin: 10px;
+	}
+	.modal{
+		display: none;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	.modal .panel{
+		width: 400px;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		background-color: #fff;
+	}
+
+	.panel .header{
+		padding: 15px 10px;
+		position: relative;
+		border-bottom: 2px solid #ccc;
+	}
+
+	.panel .header .close{
+		font-size: 16px;
+	}
+
+	.panel .header .close{
+		position: absolute;
+		right: 10px;
+		top: 12px;
+		cursor: pointer;
+	}
+
+	.panel .ct{
+		padding: 10px;
+		height: 200px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.panel .ct p{
+		display: inline-block;
+		line-height: 30px;
+	}
+
+	.panel .footer{
+		text-align: right;
+		margin: 10px 20px;
+	}
+	
+	.panel .footer .cancel,.panel .footer .finish{
+		display: inline-block;
+		margin-left: 10px;
+		text-decoration: none;
+		color: #000;
+	}
+
+	</style>
+</head>
+<body>
+	<button class="btn">点我</button>
+	<div class="modal">
+		<div class="panel">
+			<div class="header">
+				<h3>标题</h3>
+				<span class="close">X</span>
+			</div>
+			<div class="ct">
+				<p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+			</div>
+			<div class="footer">
+				<a class="cancel" href="#">取消</a>
+				<a class="finish" href="#">确定</a>
+			</div>
+		</div>		
+	</div>
+	<script>
+		var btn = document.querySelector('.btn');
+		var panel = document.querySelector('.panel');
+		var modal = document.querySelector('.modal');
+
+		btn.addEventListener('click',function(e){
+			stopEvent(e);
+			showModal(panel);
+		})
+		panel.addEventListener('click',function(e){
+			stopEvent(e);
+			if(e.target.classList.contains('close')||e.target.classList.contains('cancel')){
+				hideModal(panel);
+			}
+		})
+		document.addEventListener('click',function(e){
+			hideModal(panel);
+		})
+
+
+		function stopEvent(e) {
+  			e.stopPropagation();
+		}
+
+		function hideModal(panel){
+			modal.style.display = 'none';
+		}
+
+		function showModal(panel){
+			modal.style.display = 'block';
+		}
+	</script>
+</body>
+</html>
