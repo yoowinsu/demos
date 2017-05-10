@@ -21,6 +21,8 @@
 - [浮动列表效果](https://yoowinsu.github.io/demos/just-demos/%E9%A3%8E%E6%99%AF%E5%88%97%E8%A1%A8%E5%B8%83%E5%B1%80.html)
 - [tab选项卡](https://yoowinsu.github.io/demos/just-demos/tab%E9%80%89%E9%A1%B9%E5%8D%A1.html)
 - [模态框js实现](https://yoowinsu.github.io/demos/just-demos/%E6%A8%A1%E6%80%81%E6%A1%86js%E5%AE%9E%E7%8E%B0.html)
+- [开头结尾添加元素](https://yoowinsu.github.io/demos/just-demos/%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0.html)
+- [鼠标经过li显示图片](https://yoowinsu.github.io/demos/just-demos/%E9%BC%A0%E6%A0%87%E7%BB%8F%E8%BF%87%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87.html)
 
 ## github预览链接测试
 - [github预览链接测试](https://yoowinsu.github.io/demos/test/test.html)
