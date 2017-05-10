@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		/*box-sizing: border-box;*/
+		text-align: center;
+	}
+
+	li{
+		list-style: none;
+	}
+
+	.clearfix{
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.tab{
+		margin-top: 40px;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 10px 20px;
+		border: 1px solid #ccc;
+		border-radius: 6px;
+	}
+
+	.tab .nav .active{
+		color: #FFA000;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		border-radius: 4px 4px 0 0;
+		border-bottom: none;
+	}
+
+	.tab .nav{
+		height: 26px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.tab .nav li{
+		width: 25%;
+		float: left;
+		line-height: 26px;
+		background-color: #f7f7f7;
+		cursor: pointer;
+		box-sizing: border-box;
+		border: 1px solid #f7f7f7;
+	}
+	.tab .panels{
+		padding: 40px 0;
+    	/*border: 1px solid #ccc;*/
+		color: #FFA000;
+	}
+
+	.tab .panels li{
+		display: none;
+	}
+
+	.tab .panels .active{
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<div class="tab">
+		<ul class="nav clearfix">
+			<li class="active">北京</li>
+			<li>上海</li>
+			<li>深圳</li>
+			<li>杭州</li>
+		</ul>
+		<ul class="panels">
+			<li class="active">北京</li>
+			<li>上海</li>
+			<li>深圳</li>
+			<li>杭州</li>
+		</ul>
+	</div>
+	<script>
+		var nav = document.querySelector('.tab .nav');
+		var navLis = document.querySelectorAll('.tab .nav li');
+		var panelsLis = document.querySelectorAll('.tab .panels li');
+		//用ul作为事件代理更简洁方便，ul没有事件绑定，所以不用阻止冒泡
+		nav.addEventListener('mouseover',function(e){
+			if(e.target.tagName.toLowerCase() === 'li'){
+				for(var i=0;i<navLis.length;i++){
+					navLis[i].classList.remove('active');
+				}
+				e.target.classList.add('active');
+				//找出事件元素在类数组中的下标
+				var index = [].indexOf.call(navLis,e.target);
+
+				for(var i=0;i<panelsLis.length;i++){
+					panelsLis[i].classList.remove('active');
+					}
+				panelsLis[index].classList.add('active');
+			}
+		});
+	</script>
+</body>
+</html>
