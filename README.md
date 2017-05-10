@@ -19,6 +19,7 @@
 - [空心箭头效果](https://yoowinsu.github.io/demos/just-demos/%E7%A9%BA%E5%BF%83%E4%B8%89%E8%A7%92%E7%AE%AD%E5%A4%B4%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C.html)
 - [card名片效果](https://yoowinsu.github.io/demos/just-demos/%E7%AE%80%E5%8D%95carddemo.html)
 - [浮动列表效果](https://yoowinsu.github.io/demos/just-demos/%E9%A3%8E%E6%99%AF%E5%88%97%E8%A1%A8%E5%B8%83%E5%B1%80.html)
+- [tab选项卡](https://yoowinsu.github.io/demos/just-demos/tab%E9%80%89%E9%A1%B9%E5%8D%A1.html)
 
 ## github预览链接测试
 - [github预览链接测试](https://yoowinsu.github.io/demos/test/test.html)
