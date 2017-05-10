@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul class="ct">
+    	<li data-img="http://vans.com.cn/wp-content/uploads/2017/04/2016-10-VansWorkshop-021-300x225.jpg">鼠标放置查看图片1</li>
+    	<li data-img="http://vans.com.cn/wp-content/uploads/2017/04/L1210019-19-1-300x225.jpg">鼠标放置查看图片2</li>
+    	<li data-img="http://vans.com.cn/wp-content/uploads/2017/03/SP17_Classics_DallasClayton_VN0A38EMMOU_Authentic_Rainbow-TrueWhite_Elevated-1-300x225.jpg">鼠标放置查看图片3</li>
+	</ul>
+	<div class="img-preview"></div>
+	<script>
+	var ct = document.querySelector('.ct');
+	var imgPreview = document.querySelector('.img-preview');
+
+	ct.addEventListener('mouseover',function(e){
+		if (e.target.tagName.toLowerCase() === 'li') {
+			var imgSrc = e.target.getAttribute('data-img');
+			imgPreview.innerHTML = '<img src = "'+imgSrc+'">';
+			
+		}
+	})
+	</script>
+</body>
+</html>
