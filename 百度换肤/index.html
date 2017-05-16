@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0}
+        body {
+            background: url(images/0.jpg) top center;
+        }
+        .clearfix{
+        	content: "";
+        	display: block;
+        	clear: both;
+        }
+        .box {
+        	min-width: 320px;
+            height: 150px;
+            background: rgba(255,255,255,.3);
+            padding-top:50px;
+        }
+        li{
+        	list-style: none;
+        }
+        .box img {
+            cursor: pointer;
+            width: 15%;
+            margin: 0 2.5%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box clearfix">
+	<ul>
+		<li><img src="images/0.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/4.jpg" alt=""></li>
+	</ul> 
+</div>
+<script>
+	var ul = document.querySelector('ul');
+	var images = document.querySelectorAll('li img');
+
+	ul.addEventListener('click',function(e){
+		if (e.target.tagName.toLowerCase() === 'img') {
+			var index = [].indexOf.call(images,e.target);
+
+			document.body.style.backgroundImage = "url(images/"+index+".jpg)";
+		}	
+	})
+
+</script>
+</body>
+</html>
