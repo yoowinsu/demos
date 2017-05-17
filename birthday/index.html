@@ -103,25 +103,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		var nav = document.querySelector('.tab .nav');
-		var navLis = document.querySelectorAll('.tab .nav li');
-		var panelsLis = document.querySelectorAll('.tab .panels li');
-		nav.addEventListener('click',function(e){
-			if(e.target.tagName.toLowerCase() === 'li'){
-				for(var i=0;i<navLis.length;i++){
-					navLis[i].classList.remove('active');
-				}
-				e.target.classList.add('active');
-				var index = [].indexOf.call(navLis,e.target);
-
-				for(var i=0;i<panelsLis.length;i++){
-					panelsLis[i].classList.remove('active');
-					}
-				panelsLis[index].classList.add('active');
-			}
-		});
-	</script>
 	<script src="jquery-3.1.0.js"></script>
 	<script>
 		$(function(){
@@ -152,6 +133,18 @@
 					change();
 				},2000);
 			}
+
+
+			$(".tab .nav>li").on("click",function(){
+				var $this = $(this);
+				var index = $this.index();
+				var $panels = $this.parents(".tab").find(".panels>li");
+				$this.addClass("active");
+				$this.siblings().removeClass("active");
+	
+				$panels.removeClass("active");
+				$panels.eq(index).addClass("active");
+			})
 		});
 	</script>
 </body>

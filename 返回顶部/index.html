@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>返回顶部</title>
+	<!-- <script src="https : //code.jquery.com/jquery-migrate-3.0.0.min.js"></script> -->
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style: none;
+		padding: 10px;
+		border: 1px solid #ccc;
+		margin: 4px;
+		margin: 10px;
+		text-align: center;
+	}
+	.go-top{
+		padding: 10px;
+		color: #fff;
+		background-color: red;
+		position: fixed;
+		right: 10px;
+		bottom: 20px;
+		display: none;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+		<li>liebiao</li>
+	</ul>
+	<div class="go-top">返回顶部</div>
+	<script>
+		$(window).on("scroll",function(){
+			var top = $(window).scrollTop();
+			if (top > 200) {
+				$(".go-top").css("display","block");
+			}else{
+				$(".go-top").css("display","none");
+			}
+		})
+		
+		$(".go-top").on("click",function(){
+			$(window).scrollTop(0);
+		})
+	</script>
+</body>
+</html>
