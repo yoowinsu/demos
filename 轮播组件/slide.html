@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        #wrapper {
+            display: flex;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 1050px;
+            min-width: 320px;
+            position: relative;
+        }
+        #slides img {
+            max-width: 100%;
+        }
+        #slides {
+            display: flex;
+            transition: transform 1s;
+            width: 100%;
+            align-items: flex-start;
+        }
+        #buttons {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            transform: translateX(-50%);
+            left: 50%;
+        }
+        #buttons button{
+            width: 21px;
+            height: 21px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin: 0 4px;
+            background: #ccc;
+            text-align: center;
+        }
+        #buttons button>active{
+            background-color: #FF6604;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="slides">
+        <img src="https://ooo.0o0.ooo/2017/06/01/59303548923f0.jpg" alt="">
+        <img src="https://ooo.0o0.ooo/2017/06/01/5930356ce7a7f.jpg" alt="">
+        <img src="https://ooo.0o0.ooo/2017/06/01/5930359209eed.jpg" alt="">
+        <img src="https://ooo.0o0.ooo/2017/06/01/593035ee2a430.jpg" alt="">
+        <img src="https://ooo.0o0.ooo/2017/06/01/593035ef609c9.jpg" alt="">
+    </div>
+    <div id="buttons"></div>
+</div>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    let $slides = $('#slides')
+    let imgNum = $('#slides img').length
+    let n = 1
+    let timeId
+    autoPlay()
+
+    for(let i=0;i<imgNum;i++){
+        $('#buttons').append("<button>"+(i+1)+"</button>")
+    }
+    function autoPlay () {
+        timerId = setInterval(function () {
+            playN()
+        }, 3000)
+    }
+
+    function playN () {
+        if (n === imgNum) {
+            n = 0
+        }
+        let width = $slides.children().first().width()
+        $slides.css({
+            transform: `translateX(-${n * width}px)`
+        })
+        n = n + 1
+    }
+
+
+    $slides.on('mouseover','img',function (e){
+        window.clearInterval(timerId)
+    })
+
+    $slides.on('mouseout','img',function (e){
+        autoPlay ()
+    })
+
+    $('#buttons').on('click', 'button', function (e) {
+        window.clearInterval(timerId)
+        let $button = $(e.currentTarget)
+        n = $button.index() // API
+        playN()
+        autoPlay()
+    })
+</script>
+</body>
+</html>

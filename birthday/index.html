@@ -103,12 +103,12 @@
 			</div>
 		</div>
 	</div>
-	<script src="jquery-3.1.0.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>
 		$(function(){
 			var n=0;
 			var timer;
-			
+
 			change();
 			function change(){
 				$('.left-bar ul').stop().animate({top:-90*n},300);
@@ -120,16 +120,16 @@
 			$('#focus').mouseout(function(){
 				atuoPlay();
 			});
-			
-			
+
+
 			atuoPlay();
 			function atuoPlay(){
 				timer=setInterval(function(){
 					n++;
-					
+
 					if(n>$('.left-bar ul li').length-12){
 						n=0;
-					}					
+					}
 					change();
 				},2000);
 			}
@@ -141,7 +141,7 @@
 				var $panels = $this.parents(".tab").find(".panels>li");
 				$this.addClass("active");
 				$this.siblings().removeClass("active");
-	
+
 				$panels.removeClass("active");
 				$panels.eq(index).addClass("active");
 			})

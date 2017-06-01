@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>懒加载</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+        }
+        img {
+            max-width: 100%;
+        }
+        .images {
+            display: flex;
+            /*border: 1px solid red;*/
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .image-wrapper {
+            margin: 10px;
+            width: 350px;
+            height: 200px;
+            background: #ccc;
+        }
+        .image-wrapper > img {
+            vertical-align: top;
+        }
+    </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="images">
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-1" alt=""></div>
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-2" alt=""></div>
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-3" alt=""></div>
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-4" alt=""></div>
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-5" alt=""></div>
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-6" alt=""></div>
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-7" alt=""></div>
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-8" alt=""></div>
+    <div class="image-wrapper"><img src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-9" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-10" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-11" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-12" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-13" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-14" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-15" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-16" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-17" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-18" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-19" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-20" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-21" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-22" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-23" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-24" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-25" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-26" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-27" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-28" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-29" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-30" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-31" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-32" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-33" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-34" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-35" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-36" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-37" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-38" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-39" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-40" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-41" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-42" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-43" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-44" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-45" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-46" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-47" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-48" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-49" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-50" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-51" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-52" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-53" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-54" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-55" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-56" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-57" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-58" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-59" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-60" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-61" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-62" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-63" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-64" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-65" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-66" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-67" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-68" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-69" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-70" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-71" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-72" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-73" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-74" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-75" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-76" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-77" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-78" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-79" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-80" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-81" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-82" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-83" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-84" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-85" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-86" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-87" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-88" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-89" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-90" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-91" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-92" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-93" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-94" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-95" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-96" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-97" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-98" alt=""></div>
+    <div class="image-wrapper"><img data-src="http://via.placeholder.com/350x200/3FB618/000?text=yoowin-99" alt=""></div>
+</div>
+<script>
+    $(window).on('scroll', function (e) {
+        let $allImages = $('img[data-src]')
+        let viewportHeight = $(window).height()
+        let scrollTop = window.scrollY
+        $allImages.each(function (index, image) {
+            let imageTop = $(image).offset().top
+            if (imageTop -viewportHeight - 100 <= scrollTop) {
+                image.src = image.getAttribute('data-src')
+            }
+        })
+    })
+</script>
+</body>
+</html>
