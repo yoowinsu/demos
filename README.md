@@ -53,3 +53,9 @@
 
 ## ajax加载更多
 - [ajax加载更多](https://yoowinsu.github.io/demos/ajax/loadmore.html)
+
+## 懒加载
+- [懒加载](https://yoowinsu.github.io/demos/%E6%87%92%E5%8A%A0%E8%BD%BD/lazy-load.html)
+
+## 轮播
+- [轮播](https://yoowinsu.github.io/demos/%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6/slide.html)
