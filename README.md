@@ -50,3 +50,6 @@
 
 ## 百度换肤
 - [百度换肤](https://yoowinsu.github.io/demos/%E7%99%BE%E5%BA%A6%E6%8D%A2%E8%82%A4/index.html)
+
+## ajax加载更多
+- [ajax加载更多](https://yoowinsu.github.io/demos/ajax/loadmore.html)
