@@ -81,7 +81,7 @@ loadMore.addEventListener("click",function(e){
   e.target.innerHTML = '<img src="loading.gif" />';
 
   ajax({
-    url: 'ajax.json',
+    url: '/loadMore',
     dataType: 'json',
     method: 'get',
     data: {
@@ -103,15 +103,12 @@ loadMore.addEventListener("click",function(e){
 function onSuccess (json){
   loadMore.innerHTML = '加载更多';
   isDataArrive = true;
-  for (var i = cur; i < 5+cur; i++) {
+  for (var i = 0; i < json.length; i++) {
       let li = document.createElement('li');
-      li.innerText = json.news[i];
+      li.innerText = json[i];
       ct.appendChild(li);
   }
-  if(i >= 30){
-    isDataArrive = false;
-    return;
-  }
+
   cur += 5;
 }
 

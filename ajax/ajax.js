@@ -38,6 +38,7 @@ function ajax(opts){
     function ready() {
         if(xhr.readyState === 4) {
         	//只有2xx和304的状态码，表示服务器返回是正常状态
+            //因为get请求中都添加了时间戳，所以这里不考虑缓存出现（即304）的情况
             if(xhr.status >= 200 && xhr.status < 300) {
                 switch (settings.dataType.toLocaleLowerCase()) {
                     case "text":
@@ -59,7 +60,7 @@ function ajax(opts){
     //判断请求方式
     if(settings.method.toLocaleLowerCase() === "get") {
     	//有缓存所以要每次请求地址不一样才能更新，所以用时间戳
-        //第三个参数完全可以略去，因为如果用同步（false）返回数据会有卡顿
+        //第三个参数完全可以略去，因为如果用同步（false）会对浏览器有“堵塞效应”
         xhr.open(settings.method, settings.url + "?" + encodeURI(dataStr) +'&'+ new Date().getTime(), true);
         xhr.send();
     }else{
