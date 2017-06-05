@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二级目录</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.clearfix{
+			content: '';
+			clear: both;
+			display: block;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		html{
+			padding: 10px;
+		}
+		.nav{
+			height: 200px;
+		}
+		ul.first>li{
+			position: relative;
+			background-color: #FF6905;
+			width: 200px;
+			height: 40px;
+		}
+		ul.first>li.active{
+			background-color: #FF4E06;
+		}
+
+		ul.first>li>a{
+			display: block;
+			margin: 0 20px;
+			padding: 10px;
+			color: #fff;
+			font-size: 14px;
+		}
+		span.more{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			color: #fff;
+		}
+		ul.second{
+			position: absolute;
+			left: 100%;
+			top: 0;
+			width: 302px;
+			display: none;
+			border: 1px solid #ccc;
+		}
+		ul.second li{
+			width: 100px;
+			float: left;
+		}
+		ul.second li a{
+			color: #666666;
+			display: block;
+			font-size: 12px;
+			padding: 10px;
+			margin: 0 10px;
+		}
+		ul.second li a:hover{
+			color: #FF4E06;
+		}
+	</style>
+	<script src="http://apps.bdimg.com/query/2.1.4/jquery.js"></script>
+	<!--<script src="jquery-3.1.0.js"></script>-->
+</head>
+<body>
+	<div class="ct">
+		<div class="nav">
+			<ul class="first">
+				<li>
+					<a href="#">手机</a>
+					<span class="more">></span>
+					<ul class="second">
+						<li><a href="#">apple</a></li>
+						<li><a href="#">apple</a></li>
+						<li><a href="#">apple</a></li>
+						<li><a href="#">apple</a></li>
+						<li><a href="#">huawei</a></li>
+						<li><a href="#">huawei</a></li>
+						<li><a href="#">huawei</a></li>
+						<li><a href="#">smartisan</a></li>
+						<li><a href="#">smartisan</a></li>
+						<li><a href="#">smartisan</a></li>
+						<li><a href="#">smartisan</a></li>
+						<li><a href="#">smartisan</a></li>
+						<li><a href="#">smartisan</a></li>
+						<li><a href="#">samsung</a></li>
+						<li><a href="#">samsung</a></li>
+						<li><a href="#">samsung</a></li>
+						<li><a href="#">samsung</a></li>
+						<li><a href="#">smartisan</a></li>
+						<li><a href="#">smartisan</a></li>
+						<li><a href="#">smartisan</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">电器</a>
+					<span class="more">></span>
+					<ul class="second">
+						<li><a href="#">洗衣机</a></li>
+						<li><a href="#">冰箱</a></li>
+						<li><a href="#">空调</a></li>
+						<li><a href="#">空调</a></li>
+						<li><a href="#">空调</a></li>
+						<li><a href="#">空调</a></li>
+						<li><a href="#">空调</a></li>
+						<li><a href="#">空调</a></li>
+						<li><a href="#">冰箱</a></li>
+						<li><a href="#">冰箱</a></li>
+						<li><a href="#">冰箱</a></li>
+						<li><a href="#">冰箱</a></li>
+						<li><a href="#">冰箱</a></li>
+						<li><a href="#">空调</a></li>
+						<li><a href="#">空调</a></li>
+						<li><a href="#">空调</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">运动</a>
+					<span class="more">></span>
+					<ul class="second">
+						<li><a href="#">彪马</a></li>
+						<li><a href="#">安德玛</a></li>
+						<li><a href="#">安德玛</a></li>
+						<li><a href="#">安德玛</a></li>
+						<li><a href="#">bounce</a></li>
+						<li><a href="#">bounce</a></li>
+						<li><a href="#">bounce</a></li>
+						<li><a href="#">bounce</a></li>
+						<li><a href="#">bounce</a></li>
+						<li><a href="#">bounce</a></li>
+						<li><a href="#">耐克</a></li>
+						<li><a href="#">耐克</a></li>
+						<li><a href="#">耐克</a></li>
+						<li><a href="#">阿迪达斯</a></li>
+						<li><a href="#">阿迪达斯</a></li>
+						<li><a href="#">阿迪达斯</a></li>
+						<li><a href="#">阿迪达斯</a></li>
+						<li><a href="#">耐克</a></li>
+						<li><a href="#">耐克</a></li>
+						<li><a href="#">耐克</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">女装</a>
+					<span class="more">></span>
+					<ul class="second">
+						<li><a href="#">连衣裙</a></li>
+						<li><a href="#">连衣裙</a></li>
+						<li><a href="#">连衣裙</a></li>
+						<li><a href="#">连衣裙</a></li>
+						<li><a href="#">短裙</a></li>
+						<li><a href="#">短裙</a></li>
+						<li><a href="#">短裙</a></li>
+						<li><a href="#">短袖</a></li>
+						<li><a href="#">短袖</a></li>
+						<li><a href="#">短袖</a></li>
+						<li><a href="#">短袖</a></li>
+						<li><a href="#">短袖</a></li>
+						<li><a href="#">短裤</a></li>
+						<li><a href="#">短裤</a></li>
+						<li><a href="#">短裤</a></li>
+						<li><a href="#">短裤</a></li>
+						<li><a href="#">短裤</a></li>
+						<li><a href="#">短袖</a></li>
+						<li><a href="#">短袖</a></li>
+						<li><a href="#">短袖</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">男装</a>
+					<span class="more">></span>
+					<ul class="second">
+						<li><a href="#">短裤</a></li>
+						<li><a href="#">长裤</a></li>
+						<li><a href="#">长裤</a></li>
+						<li><a href="#">长裤</a></li>
+						<li><a href="#">上衣</a></li>
+						<li><a href="#">上衣</a></li>
+						<li><a href="#">上衣</a></li>
+						<li><a href="#">衬衣</a></li>
+						<li><a href="#">衬衣</a></li>
+						<li><a href="#">衬衣</a></li>
+						<li><a href="#">衬衣</a></li>
+						<li><a href="#">衬衣</a></li>
+						<li><a href="#">衬衣</a></li>
+						<li><a href="#">衬衣</a></li>
+						<li><a href="#">上衣</a></li>
+						<li><a href="#">上衣</a></li>
+						<li><a href="#">卫衣</a></li>
+						<li><a href="#">卫衣</a></li>
+						<li><a href="#">卫衣</a></li>
+						<li><a href="#">上衣</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		$('.first>li').hover(function () {
+			$(this).addClass('active');
+			$(this).children('.second').css('display','block');
+		}, function () {
+			$(this).removeClass('active');
+			$(this).children('.second').css('display','none');
+		});
+	</script>
+</body>
+</html>
