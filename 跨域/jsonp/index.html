@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>百度搜索框</title>
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.layout{
+				max-width: 600px;
+				text-align: center;
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			input{
+				height: 30px;
+				font: 16px/18px arial;
+				margin: 6px 0 0 7px;
+				padding-left: 4px;
+				background: transparent;
+				border: 1px solid #ccc;
+				outline: 0;
+			}
+			ol{
+				margin-top: 20px;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%);
+			}
+			ol li{
+				text-align: left;
+			}
+		</style>
+	</head>
+
+	<body>
+	<div class="layout">
+		<input type="text" />
+		<ol></ol>
+	</div>
+	<script src="jsonp.js"></script>
+	<script>
+		var input = document.querySelector("input");
+		var ol = document.querySelector("ol");
+
+		input.addEventListener('blur',fn)
+		input.addEventListener('keyup',fn)
+		input.addEventListener('Enter',fn)
+
+		function fn() {
+			var val = this.value;
+
+			jsonp({
+				url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+				data: {
+					wd: val
+				},
+				callBack: 'cb',
+				success: function(data) {
+					var str = '';
+					if(!data.s.length) {
+						ol.style.display = 'none';
+						ol.innerHTML = '';
+					} else {
+						ol.style.display = 'block';
+
+						for(var i = 0; i < data.s.length; i++) {
+							str += '<li>' + data.s[i] + '</li>';
+						}
+
+						ol.innerHTML = str;
+					}
+				}
+			});
+		}
+	</script>
+	</body>
+
+</html>
