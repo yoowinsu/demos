@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>加载更多</title>
+  <style>
+  ul,li{
+  margin: 0;
+  padding: 0
+}
+#ct li{
+  list-style:none;
+  border: 1px solid #ccc;
+  padding: 5px;
+  line-height: 30px;
+  margin-top: 4px;
+  cursor:pointer;
+  text-align: center;
+}
+#load-more{
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	cursor: pointer;
+}
+#load-more img{
+	width: 40px;
+	height: 40px;
+}
+.btn{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	width: 100px;
+	border: 1px solid pink;
+	border-radius: 1px;
+	text-align: center;
+	text-decoration: none;
+	color: pink;
+}
+.hover{
+  text-decoration: underline;
+  background: pink;
+}
+  </style>
+</head>
+<body>
+<ul id="ct">
+</ul>
+  <a id="load-more" class="btn" href="#">加载更多</a>
+</body>
+
+<script src="jquery-3.1.0.js"></script>
+<script>
+var $loadMore = $('#load-more');
+var $ct = $("#ct");
+var cur = 0; 
+var isDataArrive = true;//状态锁，防止重复点击
+
+
+$ct.on('mouseover','li',function(){
+  $(this).addClass('hover');
+})
+
+$ct.on('mouseleave','li',function(){
+  $(this).removeClass('hover');
+})
+
+$loadMore.on("click",function(e){
+
+  e.preventDefault(); 
+
+  if(!isDataArrive){
+    return;
+  }
+
+  $.ajax({
+    url: '/loadMore',
+    dataType: 'json',
+    method: 'get',
+    data: {
+      index: cur,
+      length: 5
+    },
+    success: function(json){
+      onSuccess(json);
+    },
+    error: function(){
+      onError();
+    }
+  });
+
+  isDataArrive = false;
+})
+
+    
+function onSuccess (json){
+  isDataArrive = true;
+  for (var i = 0; i < json.length; i++) {
+      $ct.append('<li>'+json[i]+'</li>');
+  }
+
+  cur += 5;
+}
+
+function onError(){
+  isDataArrive = true;
+  alert('出错了');
+}   
+</script>
+</html>

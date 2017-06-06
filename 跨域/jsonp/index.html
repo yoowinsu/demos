@@ -51,9 +51,7 @@
 		var input = document.querySelector("input");
 		var ol = document.querySelector("ol");
 
-		input.addEventListener('blur',fn)
-		input.addEventListener('keyup',fn)
-		input.addEventListener('Enter',fn)
+		input.addEventListener('input',fn)
 
 		function fn() {
 			var val = this.value;
