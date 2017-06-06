@@ -607,10 +607,10 @@
 		list.removeClass('active');
 		list.eq(idx).addClass('active');
 	})
-	$('.list>li').on('mouseover',function(){
+	$('.list').on('mouseover','li',function(){
 		$(this).find('.cover').addClass('active');
 	})
-	$('.list>li').on('mouseleave',function(){
+	$('.list').on('mouseleave','li',function(){
 		$(this).find('.cover').removeClass('active');
 	})
 </script>

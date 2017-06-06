@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dbl-tab</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.clearfix:after{
+			content: '';
+			clear: both;
+			display: block;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.layout{
+			margin-left: auto;
+			margin-right: auto;
+			width: 662px;
+		}
+		.ct{
+			width: 662px;
+			margin-top: 30px;
+		}
+		.ct div p{
+			font-size: 24px;
+			font-weight: 300;
+			margin-bottom: 10px;
+		}
+		.list{
+			margin-top: -30px;
+			margin-left: -30px;
+		}
+		.list>li{
+			float: left;
+			text-align: center;
+			position: relative;
+			width: 200px;
+			border: 1px solid #eee;
+			padding: 10px;
+			margin: 30px 0 0 30px;
+		}
+		.list .cover{
+			background-color: rgba(0,0,0,0.4);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			display: none;
+			left: 0;
+			top: 0;
+		}
+		.list .cover.active{
+			display: block;
+		}
+		.list .cover a{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			z-index: 2;
+		}
+		.list .cover a,.more{
+			color: #c81623;
+			border: 1px solid #c81623;
+			padding: 8px;
+			font-size: 14px;
+			background-color: #fff;
+			border-radius: 4px;
+		}
+		.more{
+			margin-top: 10px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.list>li h3{
+			margin-top: 10px;
+			font-size: 12px;
+			font-weight: 400;
+			text-align: left;
+			padding: 4px;
+			height: 36px;
+		}
+		.list>li .price{
+			color: #c81623;
+			font-size: 12px;
+			float: left;
+			font-weight: 400;
+			padding: 4px;
+		}
+
+	</style>
+	<script src="jquery-3.1.0.js"></script>
+</head>
+<body>
+<div class="layout">
+	<div class="ct">
+		<div>
+			<p>珠宝首饰</p>
+		</div>
+		<ul class="panel-ct">
+			<ul class="list clearfix">
+				<li>
+					<div class="cover">
+						<a href="#">立即抢购</a>
+					</div>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg" alt="">
+					<h3>藏金项链</h3>
+					<span class="price">￥899.00</span>
+				</li>
+				<li>
+					<div class="cover">
+						<a href="#">立即抢购</a>
+					</div>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg" alt="">
+					<h3>镶玉戒指</h3>
+					<span class="price">￥699.00</span>
+				</li>
+				<li>
+					<div class="cover">
+						<a href="#">立即抢购</a>
+					</div>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg" alt="">
+					<h3>藏金镶玉吊坠</h3>
+					<span class="price">￥1999.00</span>
+				</li>
+				<li>
+					<div class="cover">
+						<a href="#">立即抢购</a>
+					</div>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg" alt="">
+					<h3>镶玉吊坠</h3>
+					<span class="price">￥3999.00</span>
+				</li>
+				<li>
+					<div class="cover">
+						<a href="#">立即抢购</a>
+					</div>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg" alt="">
+					<h3>藏金镶玉</h3>
+					<span class="price">￥699.00</span>
+				</li>
+				<li>
+					<div class="cover">
+						<a href="#">立即抢购</a>
+					</div>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg" alt="">
+					<h3>藏金耳坠</h3>
+					<span class="price">￥2099.00</span>
+				</li>
+			</ul>
+		</ul>
+		<a href="#" class="more">more</a>
+	</div>
+</div>
+<script>
+	var products = [
+		{
+			img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+			name: '珂兰 黄金手 猴哥款',
+			price: '￥405.00'
+		},{
+			img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+			name: '珂兰 黄金转运珠 猴哥款',
+			price: '￥100.00'
+		},{
+			img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+			name: '珂兰 黄金手链 3D猴哥款',
+			price: '￥45.00'
+		}
+	];
+
+	$('.more').on('click',function(e){
+		e.preventDefault();
+		var list = $(this).parents('.ct').find('.list');
+		$.each(products,function(key,value){
+			var html = '<li><div class="cover"><a href="#">立即抢购</a></div><img src="'+value.img+'" alt=""><h3>'+value.name+'</h3><span class="price">'+value.price+'</span></li>';
+			list.append(html);
+		})
+	})
+
+	$('.list').on('mouseover','li',function(){
+		$(this).find('.cover').addClass('active');
+	})
+	$('.list').on('mouseleave','li',function(){
+		$(this).find('.cover').removeClass('active');
+	})
+</script>
+</body>
+</html>
