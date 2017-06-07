@@ -68,7 +68,7 @@
 - [百度搜索框](https://yoowinsu.github.io/demos/%E8%B7%A8%E5%9F%9F/jsonp/index.html)
 
 ## 导航栏
-- [二级菜单(jquery)](https://yoowinsu.github.io/demos/%E5%AF%BC%E8%88%AA%E6%A0%8F/loadmore.html)
+- [二级菜单(jquery)](https://yoowinsu.github.io/demos/%E5%AF%BC%E8%88%AA%E6%A0%8F/%E5%AF%BC%E8%88%AA%E6%A0%8F.html)
 
 ## 商品列表加载更多
 - [商品列表加载更多(jquery)](https://yoowinsu.github.io/demos/%E5%AF%BC%E8%88%AA%E6%A0%8F/loadmore.html)
