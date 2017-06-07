@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lazymore</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.clearfix:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.layout{
+			padding: 0 10%;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.imgwrapper{
+			float: left;
+			width: 200px;
+			height: 300px;
+			margin: 10px;
+			background-color: #ccc;
+			transition: all 1s;
+		}
+	</style>
+	<script src="../jquery-3.1.0.js"></script>
+</head>
+<body>
+	<div class="layout clearfix">
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=1" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=2" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=3" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=4" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=5" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=6" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=7" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=8" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=9" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=10" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=11" alt=""></img></div>
+		<div class="imgwrapper"><img src="https://unsplash.it/200/300?image=12" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=13" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=14" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=15" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=16" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=17" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=18" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=19" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=20" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=21" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=22" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=23" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=24" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=25" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=26" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=27" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=28" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=29" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=30" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=31" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=32" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=33" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=34" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=35" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=36" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=37" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=38" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=39" alt=""></img></div>
+		<div class="imgwrapper"><img data-src="https://unsplash.it/200/300?image=40" alt=""></img></div>
+	</div>
+</body>
+<script>
+	$(window).on('scroll',function(){
+		var $img = $('img[data-src]')
+		$img.each(function(){
+			var top = $(this).offset().top - $(window).height() - $(window).scrollTop();
+			if(top<100){
+				var dataSrc = $(this).attr("data-src");
+				$(this).attr('src',dataSrc)
+			}
+		})
+	})
+</script>
+</html>
