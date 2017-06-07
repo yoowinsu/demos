@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>waterfull</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.item{
+			text-align: center;
+			transition: all 1s;
+			width: 150px;
+			color: #fff;
+			margin: 10px 0 0 10px;
+			position: absolute;
+		}
+		.layout{
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+		}
+		.item:nth-child(2n+1){
+			height: 200px;
+			background-color: #66D9EF;
+		}
+		.item:nth-child(2n){
+			height: 120px;
+			background-color: pink;
+		}
+		.item:nth-child(3n){
+			height: 100px;
+			background-color: #ccc;
+		}
+		.item:nth-child(5n){
+			height: 180px;
+			background-color: #F92672;
+		}
+		.item:nth-child(4n){
+			height: 150px;
+			background-color: yellow;
+		}
+		.item:nth-child(6n){
+			height: 300px;
+			background-color: #7FE22C;
+		}
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<div class="item">1</div>
+		<div class="item">2</div>
+		<div class="item">3</div>
+		<div class="item">4</div>
+		<div class="item">5</div>
+		<div class="item">6</div>
+		<div class="item">7</div>
+		<div class="item">8</div>
+		<div class="item">9</div>
+		<div class="item">10</div>
+		<div class="item">11</div>
+		<div class="item">12</div>
+		<div class="item">13</div>
+		<div class="item">14</div>
+		<div class="item">15</div>
+		<div class="item">16</div>
+		<div class="item">17</div>
+		<div class="item">18</div>
+		<div class="item">19</div>
+		<div class="item">20</div>
+		<div class="item">21</div>
+		<div class="item">22</div>
+		<div class="item">23</div>
+		<div class="item">24</div>
+		<div class="item">25</div>
+		<div class="item">26</div>
+		<div class="item">27</div>
+		<div class="item">28</div>
+		<div class="item">29</div>
+		<div class="item">30</div>
+		<div class="item">31</div>
+		<div class="item">32</div>
+		<div class="item">33</div>
+		<div class="item">34</div>
+		<div class="item">35</div>
+		<div class="item">36</div>
+		<div class="item">37</div>
+		<div class="item">38</div>
+		<div class="item">39</div>
+		<div class="item">40</div>
+		<div class="item">41</div>
+		<div class="item">42</div>
+		<div class="item">43</div>
+		<div class="item">44</div>
+		<div class="item">45</div>
+		<div class="item">46</div>
+		<div class="item">47</div>
+		<div class="item">48</div>
+		<div class="item">49</div>
+		<div class="item">50</div>
+		<div class="item">51</div>
+		<div class="item">52</div>
+		<div class="item">53</div>
+		<div class="item">54</div>
+		<div class="item">55</div>
+		<div class="item">56</div>
+		<div class="item">57</div>
+		<div class="item">58</div>
+		<div class="item">59</div>
+		<div class="item">60</div>
+	</div>
+</body>
+<script src="jquery-3.1.0.js"></script>
+<script>
+	var waterfull = function(){
+		function render(){
+			var num = parseInt($('.layout').width()/$('.item').outerWidth(true));
+			var arr = [];
+			for(i=0;i<num;i++){
+				arr[i] = 0;
+			}
+
+			$('.item').each(function(){
+				var min = Math.min.apply(null,arr);
+				var minIndex = arr.indexOf(min);
+				$(this).css({
+					top: arr[minIndex],
+					left: minIndex*$(this).outerWidth(true)
+				})
+				arr[minIndex] += $(this).outerHeight(true);
+			})
+		}
+		render();
+		$(window).on('resize',function(){
+			render();
+		})
+		return{
+			init: render
+		}
+	}()
+
+	waterfull.init()
+</script>
+</html>
