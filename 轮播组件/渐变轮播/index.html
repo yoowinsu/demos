@@ -155,11 +155,11 @@
 	})
 
 	//鼠标移入渐变停止
-	$img.on('mouseover',function(){
+	$images.on('mouseover',function(){
 		stopAutoPlay()
 	})
 	//鼠标移出渐变动画开始
-	$img.on('mouseover',function(){
+	$images.on('mouseleave',function(){
 		autoPlay()
 	})
 
@@ -203,7 +203,7 @@
 	function autoPlay(){
 		clock = setInterval(function(){
 			playNext()
-		},3000)
+		},2000)
 	}
 
 	function stopAutoPlay(){
