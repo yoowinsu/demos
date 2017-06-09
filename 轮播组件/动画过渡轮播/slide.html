@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slide</title>
+	<style>
+		@font-face {
+			font-family: 'iconfont';  /* project id 282488 */
+			src: url('//at.alicdn.com/t/font_imjp8jhbcqdgf1or.eot');
+			src: url('//at.alicdn.com/t/font_imjp8jhbcqdgf1or.eot?#iefix') format('embedded-opentype'),
+			url('//at.alicdn.com/t/font_imjp8jhbcqdgf1or.woff') format('woff'),
+			url('//at.alicdn.com/t/font_imjp8jhbcqdgf1or.ttf') format('truetype'),
+			url('//at.alicdn.com/t/font_imjp8jhbcqdgf1or.svg#iconfont') format('svg');
+		}
+		*{
+			margin:0;padding:0;
+			box-sizing: border-box;
+		}
+		ul{
+			list-style:none;
+		}
+		a{
+			text-decoration:none;
+		}
+		.clearfix:after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		img{
+			vertical-align: top;
+		}
+
+		/*main*/
+		body{
+			padding: 10px;
+			display: flex;
+			justify-content: center;
+		}
+		.ct{
+			position: relative;
+			max-width: 800px;
+			min-height: 400px;
+			overflow: hidden;
+		}
+		.images{
+			position: relative;
+		}
+		.images>li{
+			float: left;
+		}
+
+		.arrow a{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			line-height: 28px;
+			color: #fff;
+			font-family: 'iconfont';
+			border: 1px solid #fff;
+			border-radius: 50%;
+			text-align: center;
+			top: 50%;
+			margin-top: -15px;
+			z-index: 1;
+			background-color: rgba(0,0,0,0.6);
+		}
+		.arrow a:hover{
+			opacity: 0.7;
+		}
+		.arrow .pre{
+			left: 10px;
+		}
+		.arrow .next{
+			right: 10px;
+		}
+
+		.bullet{
+			position: absolute;
+			z-index: 1;
+			left: 50%;
+			padding: 0 4px;
+			transform: translate(-50%);
+			bottom: 10px;
+			background-color: rgba(0, 0, 0, 0.5);
+			border: 0px solid;
+			border-color: rgba(0,0,0,0.5);
+			border-radius: 12px;
+		}
+		.bullet>li{
+			float: left;
+			margin: 4px;
+			border: 4px solid #fff;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		.bullet>li.active{
+			border-color: #666;
+		}
+	</style>
+	<script src="../jquery-3.1.0.js"></script>
+</head>
+<body>
+	<div class="ct">
+		<ul class="images clearfix">
+			<li><a href="#"><img src="https://unsplash.it/1200/400?image=1" alt=""></a></li>
+			<li><a href="#"><img src="https://unsplash.it/1200/400?image=2" alt=""></a></li>
+			<li><a href="#"><img src="https://unsplash.it/1200/400?image=3" alt=""></a></li>
+			<li><a href="#"><img src="https://unsplash.it/1200/400?image=4" alt=""></a></li>
+			<li><a href="#"><img src="https://unsplash.it/1200/400?image=5" alt=""></a></li>
+			<li><a href="#"><img src="https://unsplash.it/1200/400?image=6" alt=""></a></li>
+			<li><a href="#"><img src="https://unsplash.it/1200/400?image=7" alt=""></a></li>
+			<li><a href="#"><img src="https://unsplash.it/1200/400?image=8" alt=""></a></li>
+		</ul>
+		<div class="arrow">
+			<a href="#" class="pre">&#xe601</a>
+			<a href="#" class="next">&#xe600</a>
+		</div>
+		<ul class="bullet">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+<script>
+	//$img是真实的几张图，固定值
+	var $img = $('.images li'),
+		$images = $('.images'),
+		$pre = $('.pre'),
+		$next = $('.next'),
+		imgCount = $img.length,
+		imgWidth = $img.width(),
+		$bullet = $('.bullet li')
+		pageIndex = 0;
+
+	//.clone()表示深拷贝，包括子元素
+	//考虑到CSS，所以clone li结构
+	$images.append($img.eq(0).clone())
+	$images.prepend($img.eq(imgCount-1).clone());
+	$images.width((imgCount+2)*imgWidth)
+	//设置真实的0第一张图片默认出现
+	$images.css({left:-imgWidth})
+
+
+	$next.on('click',function(){
+		playNext(1)
+	})
+	$pre.on('click',function(){
+		playPre(1)
+	})
+
+	//点击某一个bullet选项，动画跳转到相应图片
+	$bullet.on('click',function(){
+		var index = $(this).index();
+		if(index>pageIndex){
+			playNext(index-pageIndex)
+		}else{
+			playPre(pageIndex-index)
+		}
+	})
+
+
+	function playNext(len){
+		//animate函数，动画执行完执行穿的参数（函数）
+		$images.animate({
+			left: '-=' + len*imgWidth}
+			,function (){
+			pageIndex +=len;
+			console.log(pageIndex)
+			if(pageIndex === imgCount){
+				pageIndex = 0;
+				$images.css({left:- imgWidth})
+			}
+			bullet()
+		})
+	}
+
+	function playPre(len){
+		$images.animate({
+			left: '+=' + len*imgWidth
+		},function (){
+			pageIndex -=len;
+			console.log(pageIndex)
+			if(pageIndex < 0){
+				pageIndex = imgCount - 1;
+				$images.css({left: -imgWidth*imgCount})
+			}
+			bullet()
+		})
+		
+	}
+
+	function bullet(){
+		$bullet.removeClass('active').eq(pageIndex).addClass('active')
+	}
+
+</script>
+</html>
