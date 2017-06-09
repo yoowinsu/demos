@@ -59,7 +59,9 @@
 - [懒加载2(jquery)](https://yoowinsu.github.io/demos/%E6%87%92%E5%8A%A0%E8%BD%BD/lazy-load2-40img.html)
 
 ## 轮播
-- [轮播(jquery)](https://yoowinsu.github.io/demos/%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6/slide.html)
+- [轮播(jquery)](https://yoowinsu.github.io/demos/%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6/index.html)
+- [左右滚动无限循环轮播demo](https://yoowinsu.github.io/demos/%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6/%E5%8A%A8%E7%94%BB%E8%BF%87%E6%B8%A1%E8%BD%AE%E6%92%AD/slide.html#)
+- [渐变轮播demo](https://yoowinsu.github.io/demos/%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD/index.html#)
 
 ## 瀑布流
 - [瀑布流(jquery)](https://yoowinsu.github.io/demos/%E7%80%91%E5%B8%83%E6%B5%81/waterfull.html)
