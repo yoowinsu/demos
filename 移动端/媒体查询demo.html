@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>媒体查询demo</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<style>
+	@media screen and (max-width: 400px){
+		body{
+			min-width: 320px;
+		}
+  		.default,.long {
+    		display: none;
+  		}
+  		.short{
+  			color: red;
+  			background-color: #fff;
+  			font-size: 24px;
+  			line-height: 36px;
+  			text-align: center;
+  		}
+	}
+	@media screen and (min-width: 400px) and (max-width: 700px) {
+  		.short,.long {
+    		display: none;
+  		}
+  		.default{
+  			color: pink;
+  			background-color: #000;
+  			font-size: 24px;
+  			line-height: 36px;
+  			text-align: center;
+  		}
+	}
+	@media screen and (min-width: 700px) {
+  		.short,.default {
+    		display: none;
+  		}
+  		.long{
+  			color: blue;
+  			background-color: #ccc;
+  			font-size: 24px;
+  			line-height: 36px;
+  			text-align: center;
+  		}
+	}
+</style>
+<body>
+	<div class="ct">
+		<p>屏宽>=700px,红色文字,白色背景</p>
+		<p>屏宽为400-700px,粉色文字,黑色背景</p>
+		<p>屏宽<=400px,蓝色文字,灰色背景</p>
+		<p class="short">您的屏宽小于400px</p>
+		<p class="default">您的屏宽处于400px和700px之间</p>
+		<p class="long">您的屏宽大于700px</p>
+	</div>
+</body>
+</html>
