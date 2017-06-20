@@ -20,7 +20,7 @@
 	var ct = document.getElementsByClassName('ct')[0];
 
 	addStart.addEventListener('click',function(){
-		if (ipt.value !== '') {
+		if (ipt.value.replace(/^\s+|\s+$/g,'')!== '') {
 			var li = document.createElement('li');
 			li.innerText = ipt.value;
 			ct.insertBefore(li,ct.firstChild);
@@ -29,7 +29,7 @@
 	})
 
 	addEnd.addEventListener('click',function(){
-		if (ipt.value !== ''){
+		if (ipt.value.replace(/^\s+|\s+$/g,'') !== ''){
 			var li = document.createElement('li');
 			li.innerText = ipt.value;
 			ct.appendChild(li);	
