@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>css3实现幻灯片效果</title>
+    <style type="text/css">
+      .box{
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            animation: loops 10s infinite;
+         }
+         @keyframes loops {
+            0% {
+                background:url(https://unsplash.it/800/400?image=11) no-repeat;             
+            }
+            25% {
+                background:url(https://unsplash.it/800/400?image=12) no-repeat;
+            }
+            50% {
+                background:url(https://unsplash.it/800/400?image=13) no-repeat;
+            }
+            75% {
+                background:url(https://unsplash.it/800/400?image=14) no-repeat;
+            }
+            100% {
+                background:url(https://unsplash.it/800/400?image=15) no-repeat;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
