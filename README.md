@@ -1,5 +1,5 @@
 # demos
-日常的小demos汇总
+日常demos
 目录（预览链接）
 ## just-demos
 - [弹框效果](https://yoowinsu.github.io/demos/just-demos/alert-demo.html)
@@ -77,3 +77,6 @@
 
 ## 商品列表选项卡
 - [商品列表选项卡(jquery)](https://yoowinsu.github.io/demos/%E5%AF%BC%E8%88%AA%E6%A0%8F/tab.html)
+
+## animation
+- [判断进入元素方向的animation效果](https://yoowinsu.github.io/demos/animation/direction-animation.html)
