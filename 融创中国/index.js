@@ -68,11 +68,40 @@ $(".six-design-wrap li").bind("mouseenter mouseleave",
         //var eventType = e.type;
         var dirName = new Array('top','right','bottom','left');
 
-
         if(e.type == 'mouseenter'){
-            console.log(this)
             $(this).find('.hover-bgc').attr('class','hover-bgc enter-'+dirName[direction]);
         }else{
             $(this).find('.hover-bgc').attr('class','hover-bgc leave-'+dirName[direction]);
         }
     })
+
+//返回顶部
+$("#header .back-top").click(function() {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 1000);
+    return false;
+});
+
+$(window).scroll(function() {
+    if($(window).scrollTop() >= 672){
+        $("#header .back-top").show()
+
+    }else{
+        $("#header .back-top").hide()
+    }
+});
+
+//导航锚点
+var navList = $('#header .nav-list li')
+var sections = $('section')
+
+navList.click(function(){
+    var index = $(this).index()
+    $("html,body").animate({scrollTop: $("#"+sections[index].id).offset().top}, 1000);
+})
+
+//submit
+$('input[type="submit"]').click(function(e){
+    e.preventDefault();
+})
