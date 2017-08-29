@@ -66,8 +66,8 @@
 ## 瀑布流
 - [瀑布流(jquery)](https://yoowinsu.github.io/demos/%E7%80%91%E5%B8%83%E6%B5%81/waterfull.html)
 
-## 跨域/jsonp
-- [百度搜索框](https://yoowinsu.github.io/demos/%E8%B7%A8%E5%9F%9F/jsonp/index.html)
+## jsonp
+- [百度搜索框](https://yoowinsu.github.io/demos/jsonp/index.html)
 
 ## 导航栏
 - [二级菜单(jquery)](https://yoowinsu.github.io/demos/%E5%AF%BC%E8%88%AA%E6%A0%8F/%E5%AF%BC%E8%88%AA%E6%A0%8F.html)
