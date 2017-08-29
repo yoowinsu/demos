@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>空心三角形指示箭头</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 90px;
+            height: 24px;
+            border: 2px solid #036803;
+            border-radius: 6px;
+            margin: 10px auto;
+            background-color: #64B400;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            line-height: 24px;
+            /*transition: all 1s;*/
+        }
+        .box:hover{
+            border-color: #B43127;
+            background-color: #D23B2F;
+        }
+        .box:hover::before{
+            border-top-color: #B43127;
+        }
+        .box:hover::after{
+            border-top-color: #D23B2F;
+        }
+
+        /*第一个三角形*/
+        .box::before{  /*这里的伪元素用单冒号和双冒号都一样*/
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            border-left: 6px solid transparent ;
+            border-right: 2px solid transparent;
+            border-top: 6px solid #036803;
+        }
+
+        /*第二个覆盖到上面的三角形*/
+        .box::after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -5.2px; /*向下偏移量是矩形边框宽度的1.4（根号2）倍，即8.4，top值为-26-（-8.4）*/
+            left: 19.4px;
+            border-left: 6px solid transparent;
+            border-right: 2px solid transparent;
+            border-top: 6px solid #64B400;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">旭瑞和昌优地</div>
+    <div class="box" style="left:520px; top:0px">正弘澜庭叙</div>
+    <div class="box" style="left:100px; top:120px">万科天伦紫台</div>
+    <div class="box" style="left:320px; top:220px">万科美景世玠</div>
+    <div class="box" style="left:100px; top:452px">豫发豫园</div>
+    <div class="box" style="left:10px; top:380px">亚新紫藤公馆</div>
+    <div class="box" style="left:630px; top:213px">碧桂园天汇</div>
+    <div class="box" style="left:630px; top:20px">瀚海晴宇</div>
+    <div class="box" style="left:630px; top:120px">建业海马九如府</div>
+    <div class="box" style="left:430px; top:150px">永威上合院</div>
+    <div class="box" style="left:330px; top:400px">金茂府</div>
+    <div class="box" style="left:330px; top:10px">康桥朗城</div>
+    <div class="box" style="left:630px; top:450px">永威森林花语</div>
+    <div class="box" style="left:43px; top:220px">蓝城玫瑰园</div>
+</body>
+</html>
