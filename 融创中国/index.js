@@ -69,9 +69,10 @@ $(".six-design-wrap li").bind("mouseenter mouseleave",
         var dirName = new Array('top','right','bottom','left');
 
         if(e.type == 'mouseenter'){
-            $(this).find('.hover-bgc').attr('class','hover-bgc enter-'+dirName[direction]);
+            $(this).find('.img-box').attr('class','img-box enter-'+dirName[direction]);
+            console.log($('#header .nav').height())
         }else{
-            $(this).find('.hover-bgc').attr('class','hover-bgc leave-'+dirName[direction]);
+            $(this).find('.img-box').attr('class','img-box leave-'+dirName[direction]);
         }
     })
 
