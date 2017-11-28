@@ -509,6 +509,9 @@ h4{
     }
     #team li{
         height: 385px;
+        width: 60%;
+        max-width: 320px;
+        margin: 20px;
     }
 }
 #team li:hover{
