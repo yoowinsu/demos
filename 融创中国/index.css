@@ -48,11 +48,11 @@ html,body{
 }
 
 #header .imgs li img{
-    height: 125vh;  /*Í¼Æ¬²»¹»¿í*/
+    height: 125vh;  /*å›¾ç‰‡ä¸å¤Ÿå®½*/
     vertical-align: top;
 }
 
-/*ÂÖ²¥Ð¡Ô²µã*/
+/*è½®æ’­å°åœ†ç‚¹*/
 .bullet{
     position: absolute;
     z-index: 1;
@@ -152,7 +152,7 @@ html,body{
     opacity: 1;
 }
 
-/*·µ»Ø¶¥²¿*/
+/*è¿”å›žé¡¶éƒ¨*/
 #header .back-top{
     position: fixed;
     display: none;
@@ -485,6 +485,7 @@ h4{
     margin-left: -30px;
     display: flex;
     justify-content: center;
+    height: 385px;
 }
 #team li{
     flex: 1;
@@ -500,12 +501,23 @@ h4{
     transition: all 1s;
     position: relative;
 }
+@media (min-width: 1000px){
+    #team ul{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    #team li{
+        height: 385px;
+    }
+}
 #team li:hover{
-    border: 3px solid #2FA162;
+    border: 1px solid #A7D5BC;
     border-radius: 16px;
     background-color: rgba(47,161,98,.4);
-    box-shadow: 0 0 6px 2px rgba(47,161,98,.4);
+    box-shadow: 0 0 2px 1px rgba(47,161,98,.4);
 }
+
 #team li:hover>img{
     transform: translateY(-10px) scale(.7);
     margin-top: 0;
